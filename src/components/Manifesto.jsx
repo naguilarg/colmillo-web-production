@@ -10,21 +10,27 @@ const Manifesto = () => {
         offset: ["start start", "end end"]
     });
 
+    // Layering & Color Timelines
     const statementOpacity = useTransform(scrollYProgress, [0, 0.15, 0.22], [1, 1, 0]);
     const statementScale = useTransform(scrollYProgress, [0, 0.15, 0.22], [1, 1, 0.95]);
     const statementZIndex = useTransform(scrollYProgress, [0, 0.2], [10, 0]);
 
     const bgColor = useTransform(scrollYProgress, [0.3, 0.5], ["rgba(0,0,0,0.4)", "rgba(0,0,0,1)"]);
 
+    // Team Section (Simultaneous)
     const teamOpacity = useTransform(scrollYProgress, [0.4, 0.6, 1], [0, 1, 1]);
     const teamZIndex = 20;
 
+    // KINETIC SHUTTERS TIMELINES
+    // Containers slide from sides to center
     const nachoSlideX = useTransform(scrollYProgress, [0.4, 0.6], ["-100%", "0%"]);
     const floSlideX = useTransform(scrollYProgress, [0.4, 0.6], ["100%", "0%"]);
 
+    // Inverse Parallax (Images move opposite to containers)
     const nachoImgX = useTransform(scrollYProgress, [0.4, 0.6], ["50%", "0%"]);
     const floImgX = useTransform(scrollYProgress, [0.4, 0.6], ["-50%", "0%"]);
 
+    // Scale for impact
     const photoScale = useTransform(scrollYProgress, [0.4, 0.7], [1.3, 1]);
 
     const [showBios, setShowBios] = useState(false);
@@ -106,6 +112,7 @@ const Manifesto = () => {
                 backgroundColor: bgColor
             }}>
 
+                {/* 1. RHYTHMIC AUTOMATIC STATEMENT */}
                 <motion.div
                     className="manifesto-statement"
                     style={{
@@ -186,6 +193,7 @@ const Manifesto = () => {
                     </motion.span>
                 </motion.div>
 
+                {/* 2. TEAM SECTION (Sliding Shutters) */}
                 <motion.div
                     className="team-shutter-container"
                     style={{
@@ -197,13 +205,14 @@ const Manifesto = () => {
                         zIndex: teamZIndex
                     }}
                 >
+                    {/* NACHO SHUTTER (Left Panel) */}
                     <motion.div style={{
                         flex: 1,
                         height: '100%',
                         position: 'relative',
                         overflow: 'hidden',
                         x: nachoSlideX,
-                        backgroundColor: '#000'
+                        backgroundColor: '#000' /* Ensure opacity to hide background text */
                     }}>
                         <motion.div style={{ width: '100%', height: '100%', x: nachoImgX }}>
                             <motion.img
@@ -220,6 +229,7 @@ const Manifesto = () => {
                             />
                         </motion.div>
 
+                        {/* BIO OVERLAY NACHO */}
                         <div className="bio-overlay nacho-bio" style={{
                             position: 'absolute',
                             bottom: '10%',
@@ -233,7 +243,7 @@ const Manifesto = () => {
                                 animate={showBios ? "animate" : "initial"}
                                 custom={0}
                                 variants={bioItemVariants}
-                                style={{ fontSize: '4rem', fontFamily: 'var(--font-serif)', textTransform: 'uppercase', marginBottom: '10px', color: '#fff' }}
+                                style={{ fontSize: '5rem', fontFamily: 'var(--font-serif)', textTransform: 'uppercase', marginBottom: '10px', color: '#fff' }}
                             >
                                 Nacho
                             </motion.h2>
@@ -243,7 +253,7 @@ const Manifesto = () => {
                                 animate={showBios ? "animate" : "initial"}
                                 custom={1}
                                 variants={bioItemVariants}
-                                style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '5px', opacity: 0.5, marginBottom: '20px', color: '#fff' }}
+                                style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '5px', opacity: 0.5, marginBottom: '20px', color: '#fff' }}
                             >
                                 Creative Director
                             </motion.p>
@@ -253,20 +263,21 @@ const Manifesto = () => {
                                 animate={showBios ? "animate" : "initial"}
                                 custom={2}
                                 variants={bioItemVariants}
-                                style={{ fontSize: '1rem', lineHeight: '1.6', fontWeight: 200, opacity: 0.8, color: '#fff' }}
+                                style={{ fontSize: '1.2rem', lineHeight: '1.6', fontWeight: 200, opacity: 0.8, color: '#fff' }}
                             >
                                 Estratega visual transformando conceptos abstractos en piezas cinematográficas inolvidables.
                             </motion.p>
                         </div>
                     </motion.div>
 
+                    {/* FLO SHUTTER (Right Panel) */}
                     <motion.div style={{
                         flex: 1,
                         height: '100%',
                         position: 'relative',
                         overflow: 'hidden',
                         x: floSlideX,
-                        backgroundColor: '#000' 
+                        backgroundColor: '#000' /* Ensure opacity to hide background text */
                     }}>
                         <motion.div style={{ width: '100%', height: '100%', x: floImgX }}>
                             <motion.img
@@ -283,9 +294,10 @@ const Manifesto = () => {
                             />
                         </motion.div>
 
+                        {/* BIO OVERLAY FLO */}
                         <div className="bio-overlay flo-bio" style={{
                             position: 'absolute',
-                            top: '20%',
+                            bottom: '10%',
                             right: '10%',
                             maxWidth: '400px',
                             textAlign: 'right',
@@ -297,7 +309,7 @@ const Manifesto = () => {
                                 animate={showBios ? "animate" : "initial"}
                                 custom={0}
                                 variants={bioItemVariants}
-                                style={{ fontSize: '4rem', fontFamily: 'var(--font-serif)', textTransform: 'uppercase', marginBottom: '10px', color: '#fff' }}
+                                style={{ fontSize: '5rem', fontFamily: 'var(--font-serif)', textTransform: 'uppercase', marginBottom: '10px', color: '#fff' }}
                             >
                                 Flo
                             </motion.h2>
@@ -307,7 +319,7 @@ const Manifesto = () => {
                                 animate={showBios ? "animate" : "initial"}
                                 custom={1}
                                 variants={bioItemVariants}
-                                style={{ fontSize: '0.7rem', textTransform: 'uppercase', letterSpacing: '5px', opacity: 0.5, marginBottom: '20px', color: '#fff' }}
+                                style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '5px', opacity: 0.5, marginBottom: '20px', color: '#fff' }}
                             >
                                 Cinematographer
                             </motion.p>
@@ -317,15 +329,16 @@ const Manifesto = () => {
                                 animate={showBios ? "animate" : "initial"}
                                 custom={2}
                                 variants={bioItemVariants}
-                                style={{ fontSize: '1rem', lineHeight: '1.6', fontWeight: 200, opacity: 0.8, color: '#fff' }}
+                                style={{ fontSize: '1.2rem', lineHeight: '1.6', fontWeight: 200, opacity: 0.8, color: '#fff' }}
                             >
-                                Escultor de luz y movimiento, capturando la esencia cruda de la realidad y elevándola artísticamente.
+                                Escultor de luz y movement, capturando la esencia cruda de la realidad y elevándola artísticamente.
                             </motion.p>
                         </div>
                     </motion.div>
 
                 </motion.div>
 
+                {/* Scroll Hint */}
                 <motion.div
                     style={{
                         position: 'absolute',
