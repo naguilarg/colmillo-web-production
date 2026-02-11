@@ -1,3 +1,14 @@
-# React + Vite
+# Colmillo Production Studio - Web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Sitio web oficial de Colmillo Production Studio.
+
+## Tecnologías
+
+- React 19
+- Vite
+- Framer Motion (Animaciones premium)
+- Lucide React (Iconos)
+
+## Despliegue
+
+Este proyecto está configurado para ser desplegado en Vercel.
