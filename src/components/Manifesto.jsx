@@ -1,5 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValueEvent } from 'framer-motion';
+import nachoImg from '../assets/nacho-web.png';
+import floImg from '../assets/flo-web.png';
 
 const Manifesto = () => {
     const containerRef = useRef(null);
@@ -216,7 +218,7 @@ const Manifesto = () => {
                     }}>
                         <motion.div style={{ width: '100%', height: '100%', x: nachoImgX }}>
                             <motion.img
-                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2000&auto=format&fit=crop"
+                                src={nachoImg}
                                 alt="Nacho"
                                 style={{
                                     width: '100%',
@@ -271,7 +273,7 @@ const Manifesto = () => {
                     }}>
                         <motion.div style={{ width: '100%', height: '100%', x: floImgX }}>
                             <motion.img
-                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2000&auto=format&fit=crop"
+                                src={floImg}
                                 alt="Flo"
                                 style={{
                                     width: '100%',
