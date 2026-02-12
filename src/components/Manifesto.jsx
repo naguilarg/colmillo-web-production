@@ -255,17 +255,7 @@ const Manifesto = () => {
                                 variants={bioItemVariants}
                                 style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '5px', opacity: 0.5, marginBottom: '20px', color: '#fff' }}
                             >
-                                Creative Director
-                            </motion.p>
-                            <motion.p
-                                className="bio-desc"
-                                initial="initial"
-                                animate={showBios ? "animate" : "initial"}
-                                custom={2}
-                                variants={bioItemVariants}
-                                style={{ fontSize: '1.2rem', lineHeight: '1.6', fontWeight: 200, opacity: 0.8, color: '#fff' }}
-                            >
-                                Estratega visual transformando conceptos abstractos en piezas cinematográficas inolvidables.
+                                Co-Founder
                             </motion.p>
                         </div>
                     </motion.div>
@@ -321,17 +311,7 @@ const Manifesto = () => {
                                 variants={bioItemVariants}
                                 style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '5px', opacity: 0.5, marginBottom: '20px', color: '#fff' }}
                             >
-                                Cinematographer
-                            </motion.p>
-                            <motion.p
-                                className="bio-desc"
-                                initial="initial"
-                                animate={showBios ? "animate" : "initial"}
-                                custom={2}
-                                variants={bioItemVariants}
-                                style={{ fontSize: '1.2rem', lineHeight: '1.6', fontWeight: 200, opacity: 0.8, color: '#fff' }}
-                            >
-                                Escultor de luz y movement, capturando la esencia cruda de la realidad y elevándola artísticamente.
+                                Co-Founder
                             </motion.p>
                         </div>
                     </motion.div>
