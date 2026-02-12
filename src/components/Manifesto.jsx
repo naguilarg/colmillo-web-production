@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValueEvent } from 'framer-motion';
-import nachoImg from '../assets/nacho.webp';
-import floImg from '../assets/flo.webp';
+import nachoImg from '../assets/nacho-frame.webp';
+import floImg from '../assets/flo-frame.webp';
 
 const Manifesto = () => {
     const containerRef = useRef(null);
