@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import BackgroundVideo from './components/BackgroundVideo';
 import Navbar from './components/Navbar';
@@ -7,13 +7,15 @@ import Manifesto from './components/Manifesto';
 import Portfolio from './components/Portfolio';
 import ProjectDetail from './components/ProjectDetail';
 import Contact from './components/Contact';
+import Meet from './components/Meet';
 import './index.css';
 
 function App() {
-  const [currentView, setCurrentView] = useState('home'); 
+  const [currentView, setCurrentView] = useState('home'); // home, manifesto, projects, contact, project-detail, meet
   const [selectedProject, setSelectedProject] = useState(null);
 
   React.useEffect(() => {
+    // We only need browser scroll for Manifesto scrollytelling
     if (currentView === 'manifesto') {
       document.body.style.overflowY = 'scroll';
       document.body.style.overflowX = 'hidden';
@@ -39,10 +41,10 @@ function App() {
   return (
     <div style={{
       color: '#fff',
-      height: currentView === 'manifesto' ? 'auto' : '100vh', 
+      height: currentView === 'manifesto' ? 'auto' : '100vh', // Allow height expansion for manifesto
       width: '100vw',
       position: 'relative',
-      overflow: currentView === 'manifesto' ? 'visible' : 'hidden' 
+      overflow: currentView === 'manifesto' ? 'visible' : 'hidden' // Key fix for scroll propagation
     }}>
       <BackgroundVideo src="/background.webm" />
 
@@ -118,6 +120,19 @@ function App() {
               <ProjectDetail project={selectedProject} onBack={handleBackToPortfolio} />
             </motion.div>
           )}
+
+          {/* currentView === 'meet' && (
+            <motion.div
+              key="meet"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.8 }}
+              style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 2000 }}
+            >
+              <Meet setCurrentView={setCurrentView} />
+            </motion.div>
+          ) */}
         </AnimatePresence>
       </main>
     </div>
