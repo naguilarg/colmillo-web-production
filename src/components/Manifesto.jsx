@@ -1,5 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValueEvent } from 'framer-motion';
+import nachoImg from '../assets/nacho-web.png';
+import floImg from '../assets/flo-web.png';
 
 const Manifesto = () => {
     const containerRef = useRef(null);
@@ -216,7 +218,7 @@ const Manifesto = () => {
                     }}>
                         <motion.div style={{ width: '100%', height: '100%', x: nachoImgX }}>
                             <motion.img
-                                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2000&auto=format&fit=crop"
+                                src={nachoImg}
                                 alt="Nacho"
                                 style={{
                                     width: '100%',
@@ -255,17 +257,7 @@ const Manifesto = () => {
                                 variants={bioItemVariants}
                                 style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '5px', opacity: 0.5, marginBottom: '20px', color: '#fff' }}
                             >
-                                Creative Director
-                            </motion.p>
-                            <motion.p
-                                className="bio-desc"
-                                initial="initial"
-                                animate={showBios ? "animate" : "initial"}
-                                custom={2}
-                                variants={bioItemVariants}
-                                style={{ fontSize: '1.2rem', lineHeight: '1.6', fontWeight: 200, opacity: 0.8, color: '#fff' }}
-                            >
-                                Estratega visual transformando conceptos abstractos en piezas cinematográficas inolvidables.
+                                Co-Founder
                             </motion.p>
                         </div>
                     </motion.div>
@@ -281,7 +273,7 @@ const Manifesto = () => {
                     }}>
                         <motion.div style={{ width: '100%', height: '100%', x: floImgX }}>
                             <motion.img
-                                src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2000&auto=format&fit=crop"
+                                src={floImg}
                                 alt="Flo"
                                 style={{
                                     width: '100%',
@@ -321,17 +313,7 @@ const Manifesto = () => {
                                 variants={bioItemVariants}
                                 style={{ fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '5px', opacity: 0.5, marginBottom: '20px', color: '#fff' }}
                             >
-                                Cinematographer
-                            </motion.p>
-                            <motion.p
-                                className="bio-desc"
-                                initial="initial"
-                                animate={showBios ? "animate" : "initial"}
-                                custom={2}
-                                variants={bioItemVariants}
-                                style={{ fontSize: '1.2rem', lineHeight: '1.6', fontWeight: 200, opacity: 0.8, color: '#fff' }}
-                            >
-                                Escultor de luz y movement, capturando la esencia cruda de la realidad y elevándola artísticamente.
+                                Co-Founder
                             </motion.p>
                         </div>
                     </motion.div>
