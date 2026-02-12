@@ -7,7 +7,8 @@ const Menu = ({ isOpen, setIsOpen, setView }) => {
         { name: 'Nosotrxs', view: 'manifesto' },
         { name: 'Proyectos', view: 'projects' },
         { name: 'Contacto', view: 'contact' },
-        { name: 'Cloud', view: 'home' },
+        { name: 'Contacto', view: 'contact' },
+        // { name: 'Reuniones', view: 'meet' }, // Disabled for isolation
     ];
 
     const variants = {

@@ -180,7 +180,7 @@ const Manifesto = () => {
                         transition={{ duration: 0.5 }}
                         style={{ fontWeight: 200 }}
                     >
-                        {" "}y nos enfocamos en resaltar lo mejor de cada cliente en todo lo que{" "}
+                        {" "}y nos enfocamos en resaltar lo mejor de cada proyecto en todo lo que{" "}
                     </motion.span>
 
                     <motion.span

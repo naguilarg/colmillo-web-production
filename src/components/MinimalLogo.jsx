@@ -27,7 +27,7 @@ const MinimalLogo = () => {
             top: '30px',
             left: '30px',
             zIndex: 50,
-            width: '80px',
+            width: '40px',
         }} className="minimal-logo-container">
             <style>
                 {`
