@@ -7,7 +7,8 @@ const Menu = ({ isOpen, setIsOpen, setView }) => {
         { name: 'Nosotrxs', view: 'manifesto' },
         { name: 'Proyectos', view: 'projects' },
         { name: 'Contacto', view: 'contact' },
-        { name: 'Cloud', view: 'home' },
+        { name: 'Contacto', view: 'contact' },
+        // { name: 'Reuniones', view: 'meet' }, // Disabled for isolation
     ];
 
     const variants = {
@@ -66,12 +67,12 @@ const Menu = ({ isOpen, setIsOpen, setView }) => {
                         {`
                             @media (max-width: 768px) {
                                 .menu-panel {
-                                    padding: 0 30px !important; 
+                                    padding: 0 30px !important; /* Slightly tighter padding */
                                     justify-content: flex-start !important;
                                     padding-top: 20vh !important;
                                 }
                                 .menu-link-btn {
-                                    font-size: 2.8rem !important; 
+                                    font-size: 2.8rem !important; /* Reduced from 3.5rem */
                                     line-height: 1.1 !important;
                                 }
                                 .menu-logo-container {
@@ -93,6 +94,7 @@ const Menu = ({ isOpen, setIsOpen, setView }) => {
                         `}
                     </style>
 
+                    {/* Menu Items */}
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0px', zIndex: 2, marginBottom: '5vh' }}>
                         {menuLinks.map((link, i) => (
                             <div key={link.name} style={{ overflow: 'hidden' }}>
@@ -133,6 +135,7 @@ const Menu = ({ isOpen, setIsOpen, setView }) => {
                         ))}
                     </div>
 
+                    {/* Large Logo Branding - EVEN LARGER AND PURE BLACK */}
                     <motion.div
                         className="menu-logo-container"
                         initial={{ opacity: 0, x: 50 }}
@@ -152,6 +155,7 @@ const Menu = ({ isOpen, setIsOpen, setView }) => {
                         <Logo style={{ width: '100%', height: 'auto', fill: '#000' }} />
                     </motion.div>
 
+                    {/* Footer Branding Info */}
                     <div className="menu-footer-branding" style={{
                         position: 'absolute',
                         bottom: '40px',
