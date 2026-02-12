@@ -1,0 +1,246 @@
+[
+  {
+    "id": 1,
+    "title": "Augeo",
+    "category": "Short Film",
+    "year": "2024",
+    "video": "/projects_vid/Augeo.webm",
+    "description": "Una exploración visual sobre el crecimiento y la transformación humana a través de paisajes oníricos y texturas orgánicas.",
+    "credits": [
+      {
+        "role": "Director",
+        "name": "Nacho"
+      },
+      {
+        "role": "DOP",
+        "name": "Flo"
+      },
+      {
+        "role": "Editor",
+        "name": "Colmillo Studio"
+      },
+      {
+        "role": "Gaffer",
+        "name": "Marcus Valery"
+      },
+      {
+        "role": "Art Director",
+        "name": "Sofia Bellini"
+      },
+      {
+        "role": "Focus Puller",
+        "name": "Lucas Grey"
+      },
+      {
+        "role": "Stylist",
+        "name": "Elena Rossi"
+      },
+      {
+        "role": "Colorist",
+        "name": "Vivid Grade"
+      },
+      {
+        "role": "Music",
+        "name": "Zenith Sound"
+      },
+      {
+        "role": "Production Design",
+        "name": "Oliver Twist"
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "title": "Hilvanando Historias",
+    "category": "Documentary",
+    "year": "2023",
+    "video": "/projects_vid/Hilvanando Historias.webm",
+    "description": "Documental que rescata los hilos invisibles de la memoria colectiva en los barrios históricos de la ciudad.",
+    "credits": [
+      {
+        "role": "Director",
+        "name": "Nacho"
+      },
+      {
+        "role": "Journalist",
+        "name": "Elena Ruiz"
+      },
+      {
+        "role": "Sound",
+        "name": "Audio Lab"
+      },
+      {
+        "role": "Camera B",
+        "name": "Julian Torres"
+      },
+      {
+        "role": "Research",
+        "name": "Marta Sol"
+      },
+      {
+        "role": "Fixer",
+        "name": "Diego Ramos"
+      },
+      {
+        "role": "Archival Research",
+        "name": "Laura G."
+      },
+      {
+        "role": "Translation",
+        "name": "Global Voices"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Ketchup's Market",
+    "category": "Commercial",
+    "year": "2023",
+    "video": "/projects_vid/KetchupS Market.webm",
+    "description": "Campaña publicitaria dinámica que celebra la explosión de sabor y color en la cocina urbana moderna.",
+    "credits": [
+      {
+        "role": "Agency",
+        "name": "Creative Minds"
+      },
+      {
+        "role": "Producer",
+        "name": "Flo"
+      },
+      {
+        "role": "Colorist",
+        "name": "Vivid Grade"
+      },
+      {
+        "role": "Food Stylist",
+        "name": "Clara Chef"
+      },
+      {
+        "role": "Copywriter",
+        "name": "James Bond"
+      },
+      {
+        "role": "Account Manager",
+        "name": "Sarah Miller"
+      },
+      {
+        "role": "Sound Design",
+        "name": "Sonic Waves"
+      }
+    ]
+  },
+  {
+    "id": 4,
+    "title": "Liiminal Sessions",
+    "category": "Music Video",
+    "year": "2024",
+    "video": "/projects_vid/Liiminal Live Sessions.webm",
+    "description": "Sesión musical inmersiva donde la luz y el sonido se funden en una experiencia sensorial liminal.",
+    "credits": [
+      {
+        "role": "Artist",
+        "name": "Liiminal"
+      },
+      {
+        "role": "Visuals",
+        "name": "Colmillo Studio"
+      },
+      {
+        "role": "Lighting",
+        "name": "Pro Light"
+      },
+      {
+        "role": "Camera Ops",
+        "name": "Flo & Mike"
+      },
+      {
+        "role": "Set Design",
+        "name": "Neon Dreams"
+      },
+      {
+        "role": "Post-Production",
+        "name": "Nacho"
+      },
+      {
+        "role": "VFX",
+        "name": "Digital Ghost"
+      }
+    ]
+  },
+  {
+    "id": 5,
+    "title": "Sonica Vuelve",
+    "category": "Event Recap",
+    "year": "2024",
+    "video": "/projects_vid/Sonica Vuelve Al Club.webm",
+    "description": "Recorrido energético por la noche del regreso de Sonica, capturando la esencia cruda de la pista de baile.",
+    "credits": [
+      {
+        "role": "Event",
+        "name": "Sonica Club"
+      },
+      {
+        "role": "Camera",
+        "name": "Nacho & Flo"
+      },
+      {
+        "role": "Post",
+        "name": "Colmillo"
+      },
+      {
+        "role": "Sound Mix",
+        "name": "Club Audio"
+      },
+      {
+        "role": "Motion Graphics",
+        "name": "Flo"
+      },
+      {
+        "role": "Color Correction",
+        "name": "Studio Colmillo"
+      }
+    ]
+  },
+  {
+    "id": 6,
+    "title": "Starlove",
+    "category": "Commercial",
+    "year": "2024",
+    "video": "/projects_vid/Starlove Commercial.webm",
+    "description": "Narrativa cinematográfica para Starlove, fusionando elegancia clásica con una estética de vanguardia.",
+    "credits": [
+      {
+        "role": "Client",
+        "name": "Starlove"
+      },
+      {
+        "role": "Creative",
+        "name": "Studio X"
+      },
+      {
+        "role": "Director",
+        "name": "Flo"
+      },
+      {
+        "role": "Cinematographer",
+        "name": "Nacho"
+      },
+      {
+        "role": "Gaffer",
+        "name": "Sam Sparks"
+      },
+      {
+        "role": "MUA",
+        "name": "Jenny Blush"
+      },
+      {
+        "role": "Talent",
+        "name": "Agency Models"
+      },
+      {
+        "role": "Location Scout",
+        "name": "Secret Spots"
+      }
+    ]
+  }
+]
