@@ -16,8 +16,10 @@ function App() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   // Check simple routing for Admin
+  // Check simple routing for Admin
   React.useEffect(() => {
-    if (window.location.pathname === '/admin') {
+    // Check if path starts with /admin (handles /admin and /admin/)
+    if (window.location.pathname.startsWith('/admin')) {
       setCurrentView('admin');
     }
   }, []);
