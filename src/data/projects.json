@@ -50,44 +50,6 @@
     ]
   },
   {
-    "id": 3,
-    "title": "Ketchup's",
-    "category": "Commercial",
-    "year": "2023",
-    "video": "/projects_vid/KetchupS Market.webm",
-    "description": "Campaña publicitaria dinámica que celebra la explosión de sabor y color en la cocina urbana moderna.",
-    "credits": [
-      {
-        "role": "Agency",
-        "name": "Creative Minds"
-      },
-      {
-        "role": "Producer",
-        "name": "Flo"
-      },
-      {
-        "role": "Colorist",
-        "name": "Vivid Grade"
-      },
-      {
-        "role": "Food Stylist",
-        "name": "Clara Chef"
-      },
-      {
-        "role": "Copywriter",
-        "name": "James Bond"
-      },
-      {
-        "role": "Account Manager",
-        "name": "Sarah Miller"
-      },
-      {
-        "role": "Sound Design",
-        "name": "Sonic Waves"
-      }
-    ]
-  },
-  {
     "id": 2,
     "title": "Hilvanando Historias",
     "category": "Documentary",
@@ -126,6 +88,44 @@
       {
         "role": "Translation",
         "name": "Global Voices"
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "title": "Ketchup's",
+    "category": "Commercial",
+    "year": "2023",
+    "video": "/projects_vid/KetchupS Market.webm",
+    "description": "Campaña publicitaria dinámica que celebra la explosión de sabor y color en la cocina urbana moderna.",
+    "credits": [
+      {
+        "role": "Agency",
+        "name": "Creative Minds"
+      },
+      {
+        "role": "Producer",
+        "name": "Flo"
+      },
+      {
+        "role": "Colorist",
+        "name": "Vivid Grade"
+      },
+      {
+        "role": "Food Stylist",
+        "name": "Clara Chef"
+      },
+      {
+        "role": "Copywriter",
+        "name": "James Bond"
+      },
+      {
+        "role": "Account Manager",
+        "name": "Sarah Miller"
+      },
+      {
+        "role": "Sound Design",
+        "name": "Sonic Waves"
       }
     ]
   },
