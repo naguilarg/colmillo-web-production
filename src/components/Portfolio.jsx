@@ -6,6 +6,7 @@ const Portfolio = ({ onProjectSelect }) => {
     const [hoveredProject, setHoveredProject] = useState(null);
     const videoRefs = useRef({});
 
+    // Dramatic Reveal Variants
     const containerVariants = {
         initial: { opacity: 0 },
         animate: {
@@ -44,14 +45,14 @@ const Portfolio = ({ onProjectSelect }) => {
                 {`
                     @media (max-width: 768px) {
                         .portfolio-container {
-                            padding: 100px 30px 40px !important;
+                            padding: 100px 30px 40px !important; /* Increased top padding */
                         }
                         .project-item {
                             gap: 15px !important;
                             margin-bottom: 25px !important;
                         }
                         .project-title {
-                            font-size: 1.8rem !important;
+                            font-size: 1.8rem !important; /* Smaller titles */
                         }
                         .project-metadata {
                             opacity: 0.5 !important;
@@ -73,6 +74,7 @@ const Portfolio = ({ onProjectSelect }) => {
                     }
                 `}
             </style>
+            {/* Dynamic Background Video Overlay */}
             <AnimatePresence>
                 {hoveredProject && (
                     <motion.div
@@ -103,6 +105,7 @@ const Portfolio = ({ onProjectSelect }) => {
                             }}
                             src={hoveredProject.video}
                         />
+                        {/* Subtle dark overlay for readability while browsing labels */}
                         <div style={{
                             position: 'absolute',
                             top: 0,
@@ -115,68 +118,97 @@ const Portfolio = ({ onProjectSelect }) => {
                 )}
             </AnimatePresence>
 
-            <div style={{ zIndex: 2 }}>
-                {projectsData.map((project, index) => (
-                    <motion.div
-                        key={project.id}
-                        variants={itemVariants}
-                        className="project-item"
-                        style={{
-                            marginBottom: '15px',
-                            display: 'flex',
-                            alignItems: 'baseline',
-                            gap: '40px',
-                            cursor: 'pointer'
-                        }}
-                        onMouseEnter={() => setHoveredProject(project)}
-                        onMouseLeave={() => setHoveredProject(null)}
-                        onClick={() => onProjectSelect(project)}
-                    >
-                        <span style={{
-                            fontSize: '0.8rem',
-                            fontFamily: 'var(--font-mono)',
-                            opacity: 0.4,
-                            minWidth: '30px'
-                        }}>
-                            0{index + 1}
-                        </span>
+            <div
+                className="project-list-scrollable"
+                style={{
+                    zIndex: 2,
+                    width: '100%',
+                    height: '100%',
+                    overflowY: 'auto',
+                    display: 'flex',
+                    flexDirection: 'column',
+                    justifyContent: 'center',
+                    maskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
+                    WebkitMaskImage: 'linear-gradient(to bottom, transparent 0%, black 15%, black 85%, transparent 100%)',
+                    scrollbarWidth: 'none', // Firefox
+                    msOverflowStyle: 'none',  // IE 10+
+                }}
+            >
+                {/* Hide Scrollbar for Chrome/Safari/Opera */}
+                <style>
+                    {`
+                        .project-list-scrollable::-webkit-scrollbar { 
+                            display: none; 
+                        }
+                    `}
+                </style>
 
-                        <div className="project-row" style={{ display: 'flex', alignItems: 'baseline', gap: '20px' }}>
-                            <h2 className="project-title" style={{
-                                fontSize: 'clamp(2rem, 6vw, 6rem)',
-                                fontFamily: hoveredProject?.id === project.id ? 'var(--font-serif)' : 'var(--font-sans)',
-                                textTransform: 'uppercase',
-                                lineHeight: '1',
-                                transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
-                                opacity: hoveredProject && hoveredProject.id !== project.id ? 0.2 : 1,
-                                fontStyle: hoveredProject?.id === project.id ? 'italic' : 'normal',
-                                color: '#fff'
+                {/* Inner padding container to ensure items can scroll into view */}
+                <div style={{ padding: '15vh 0' }}> 
+                    {projectsData.map((project, index) => (
+                        <motion.div
+                            key={project.id}
+                            variants={itemVariants}
+                            className="project-item"
+                            style={{
+                                marginBottom: '15px',
+                                display: 'flex',
+                                alignItems: 'baseline',
+                                gap: '40px',
+                                cursor: 'pointer'
+                            }}
+                            onMouseEnter={() => setHoveredProject(project)}
+                            onMouseLeave={() => setHoveredProject(null)}
+                            onClick={() => onProjectSelect(project)}
+                        >
+                            <span style={{
+                                fontSize: '0.8rem',
+                                fontFamily: 'var(--font-mono)',
+                                opacity: 0.4,
+                                minWidth: '30px'
                             }}>
-                                {project.title}
-                            </h2>
+                                0{index + 1}
+                            </span>
 
-                            <motion.div
-                                className="project-metadata"
-                                initial={{ opacity: 0, x: -20 }}
-                                animate={{
-                                    opacity: hoveredProject?.id === project.id ? 0.5 : 0,
-                                    x: hoveredProject?.id === project.id ? 0 : -20
-                                }}
-                                style={{
-                                    fontSize: '0.8rem',
-                                    letterSpacing: '2px',
+                            <div className="project-row" style={{ display: 'flex', alignItems: 'baseline', gap: '20px' }}>
+                                <h2 className="project-title" style={{
+                                    fontSize: 'clamp(2rem, 6vw, 6rem)',
+                                    fontFamily: hoveredProject?.id === project.id ? 'var(--font-serif)' : 'var(--font-sans)',
                                     textTransform: 'uppercase',
-                                    whiteSpace: 'nowrap',
+                                    lineHeight: '1',
+                                    transition: 'all 0.5s cubic-bezier(0.16, 1, 0.3, 1)',
+                                    opacity: hoveredProject && hoveredProject.id !== project.id ? 0.2 : 1,
+                                    fontStyle: hoveredProject?.id === project.id ? 'italic' : 'normal',
                                     color: '#fff'
-                                }}
-                            >
-                                {project.category} | {project.year}
-                            </motion.div>
-                        </div>
-                    </motion.div>
-                ))}
+                                }}>
+                                    {project.title}
+                                </h2>
+
+                                {/* Categorization & Year Reveal */}
+                                <motion.div
+                                    className="project-metadata"
+                                    initial={{ opacity: 0, x: -20 }}
+                                    animate={{
+                                        opacity: hoveredProject?.id === project.id ? 0.5 : 0,
+                                        x: hoveredProject?.id === project.id ? 0 : -20
+                                    }}
+                                    style={{
+                                        fontSize: '0.8rem',
+                                        letterSpacing: '2px',
+                                        textTransform: 'uppercase',
+                                        whiteSpace: 'nowrap',
+                                        color: '#fff'
+                                    }}
+                                >
+                                    {project.category} | {project.year}
+                                </motion.div>
+                            </div>
+                        </motion.div>
+                    ))}
+                </div>
             </div>
 
+            {/* Bottom hint */}
             <motion.div
                 className="bottom-hint"
                 initial={{ opacity: 0 }}

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import BackgroundVideo from './components/BackgroundVideo';
 import Navbar from './components/Navbar';
@@ -8,11 +8,19 @@ import Portfolio from './components/Portfolio';
 import ProjectDetail from './components/ProjectDetail';
 import Contact from './components/Contact';
 import Meet from './components/Meet';
+import Admin from './components/Admin';
 import './index.css';
 
 function App() {
-  const [currentView, setCurrentView] = useState('home'); // home, manifesto, projects, contact, project-detail, meet
+  const [currentView, setCurrentView] = useState('home'); // home, manifesto, projects, contact, project-detail, meet, admin
   const [selectedProject, setSelectedProject] = useState(null);
+
+  // Check simple routing for Admin
+  React.useEffect(() => {
+    if (window.location.pathname === '/admin') {
+      setCurrentView('admin');
+    }
+  }, []);
 
   React.useEffect(() => {
     // We only need browser scroll for Manifesto scrollytelling
@@ -48,7 +56,7 @@ function App() {
     }}>
       <BackgroundVideo src="/background.webm" />
 
-      <Navbar setView={setCurrentView} />
+      {currentView !== 'meet' && <Navbar setView={setCurrentView} />}
 
       <main style={{
         width: '100%',
@@ -121,7 +129,7 @@ function App() {
             </motion.div>
           )}
 
-          {/* currentView === 'meet' && (
+          {currentView === 'meet' && (
             <motion.div
               key="meet"
               initial={{ opacity: 0 }}
@@ -132,7 +140,13 @@ function App() {
             >
               <Meet setCurrentView={setCurrentView} />
             </motion.div>
-          ) */}
+          )}
+
+          {currentView === 'admin' && (
+            <div style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 9999 }}>
+              <Admin />
+            </div>
+          )}
         </AnimatePresence>
       </main>
     </div>
