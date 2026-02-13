@@ -114,6 +114,19 @@ const Admin = () => {
         handleSave(updated);
     };
 
+    const moveProject = (index, direction) => {
+        const newProjects = [...projects];
+        if (direction === 'up' && index > 0) {
+            [newProjects[index], newProjects[index - 1]] = [newProjects[index - 1], newProjects[index]];
+        } else if (direction === 'down' && index < newProjects.length - 1) {
+            [newProjects[index], newProjects[index + 1]] = [newProjects[index + 1], newProjects[index]];
+        } else {
+            return;
+        }
+        setProjects(newProjects); // Optimistic UI update
+        handleSave(newProjects);
+    };
+
     if (!isAuthenticated) {
         return (
             <div style={{ height: '100vh', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', color: '#fff', gap: '20px' }}>
@@ -153,13 +166,15 @@ const Admin = () => {
                 />
             ) : (
                 <div style={{ display: 'grid', gap: '20px' }}>
-                    {projects.map(p => (
+                    {projects.map((p, index) => (
                         <div key={p.id} style={{ border: '1px solid #333', padding: '20px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                             <div>
                                 <h3 style={{ margin: 0 }}>{p.title}</h3>
                                 <small style={{ opacity: 0.6 }}>{p.category} | {p.year}</small>
                             </div>
                             <div style={{ gap: '10px', display: 'flex' }}>
+                                <button onClick={() => moveProject(index, 'up')} disabled={index === 0} style={{ padding: '5px 10px', cursor: 'pointer', opacity: index === 0 ? 0.3 : 1 }}>↑</button>
+                                <button onClick={() => moveProject(index, 'down')} disabled={index === projects.length - 1} style={{ padding: '5px 10px', cursor: 'pointer', opacity: index === projects.length - 1 ? 0.3 : 1 }}>↓</button>
                                 <button onClick={() => setEditingProject(p)} style={{ padding: '5px 10px', cursor: 'pointer' }}>Edit</button>
                                 <button onClick={() => handleDelete(p.id)} style={{ padding: '5px 10px', background: 'red', color: 'white', border: 'none', cursor: 'pointer' }}>Delete</button>
                             </div>
