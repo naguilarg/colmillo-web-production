@@ -7,8 +7,7 @@ const Menu = ({ isOpen, setIsOpen, setView }) => {
         { name: 'Nosotrxs', view: 'manifesto' },
         { name: 'Proyectos', view: 'projects' },
         { name: 'Contacto', view: 'contact' },
-        { name: 'Contacto', view: 'contact' },
-        // { name: 'Reuniones', view: 'meet' }, // Disabled for isolation
+        { name: 'MEET', url: 'https://meet.colmillo.es/' },
     ];
 
     const variants = {
@@ -105,7 +104,14 @@ const Menu = ({ isOpen, setIsOpen, setView }) => {
                                     initial="initial"
                                     animate="animate"
                                     exit="exit"
-                                    onClick={() => handleLinkClick(link.view)}
+                                    onClick={() => {
+                                        if (link.url) {
+                                            window.open(link.url, '_blank', 'noopener,noreferrer');
+                                            setIsOpen(false);
+                                        } else {
+                                            handleLinkClick(link.view);
+                                        }
+                                    }}
                                     style={{
                                         display: 'block',
                                         fontSize: 'clamp(5.5rem, 20vw, 15rem)',
