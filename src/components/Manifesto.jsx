@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence, useMotionValueEvent } from 'framer-motion';
-import nachoImg from '../assets/nacho-web.png';
-import floImg from '../assets/flo-web.png';
+import nachoImg from '../assets/nacho-frame.webp';
+import floImg from '../assets/flo-frame.webp';
 
 const Manifesto = () => {
     const containerRef = useRef(null);
@@ -224,8 +224,7 @@ const Manifesto = () => {
                                     width: '100%',
                                     height: '100%',
                                     objectFit: 'cover',
-                                    filter: 'grayscale(100%)',
-                                    opacity: 0.6,
+                                    objectFit: 'cover',
                                     scale: photoScale
                                 }}
                             />
@@ -279,8 +278,7 @@ const Manifesto = () => {
                                     width: '100%',
                                     height: '100%',
                                     objectFit: 'cover',
-                                    filter: 'grayscale(100%)',
-                                    opacity: 0.6,
+                                    objectFit: 'cover',
                                     scale: photoScale
                                 }}
                             />
