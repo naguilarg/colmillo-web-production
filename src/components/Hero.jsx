@@ -6,7 +6,7 @@ const Hero = ({ onCtaClick }) => {
     return (
         <section
             style={{
-                height: '100vh',
+                height: '100dvh',
                 width: '100%',
                 position: 'relative',
                 display: 'flex',
@@ -117,7 +117,9 @@ const Hero = ({ onCtaClick }) => {
                             font-size: 0.55rem !important;
                         }
                         .hero-rights {
-                            display: none; /* Hide secondary text on mobile for cleanliness */
+                            display: block;
+                            order: 3;
+                            font-size: 0.55rem !important;
                         }
                     }
                 `}

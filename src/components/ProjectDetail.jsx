@@ -118,9 +118,7 @@ const ProjectDetail = ({ project, projects, onSelectProject, onBack }) => {
                             justify-content: center !important;
                         }
                         .footer-branding {
-                            display: block !important; /* Made visible again as requested */
-                            text-align: center;
-                            margin-top: 15px;
+                            display: none !important; /* Hide on mobile as requested */
                         }
                         .project-header {
                             padding: 40px 20px 10px !important;
