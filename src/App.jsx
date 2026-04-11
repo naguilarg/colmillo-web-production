@@ -52,12 +52,12 @@ function App() {
   return (
     <div style={{
       color: '#fff',
-      height: currentView === 'manifesto' ? 'auto' : '100vh', // Allow height expansion for manifesto
+      height: currentView === 'manifesto' ? 'auto' : '100dvh', // Use 100dvh for mobile support
       width: '100vw',
       position: 'relative',
       overflow: currentView === 'manifesto' ? 'visible' : 'hidden' // Key fix for scroll propagation
     }}>
-      <BackgroundVideo src="/background.webm" />
+      <BackgroundVideo src="/background.mp4" />
 
       {currentView !== 'meet' && <Navbar setView={setCurrentView} />}
 

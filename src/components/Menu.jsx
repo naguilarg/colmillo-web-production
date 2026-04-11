@@ -50,7 +50,7 @@ const Menu = ({ isOpen, setIsOpen, setView }) => {
                         top: 0,
                         left: 0,
                         width: '100%',
-                        height: '100vh',
+                        height: '100dvh',
                         background: '#FFFFFF',
                         zIndex: 1500,
                         display: 'flex',
@@ -82,11 +82,11 @@ const Menu = ({ isOpen, setIsOpen, setView }) => {
                                 }
                                 .menu-footer-branding {
                                     left: 40px !important;
-                                    bottom: 60px !important;
+                                    bottom: 120px !important;
                                 }
                                 .menu-footer-links {
                                     left: 40px !important;
-                                    bottom: 30px !important;
+                                    bottom: 80px !important;
                                     flex-wrap: wrap;
                                     gap: 20px !important;
                                 }
