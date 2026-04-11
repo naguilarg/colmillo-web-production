@@ -88,9 +88,11 @@ const Portfolio = ({ onProjectSelect }) => {
                             top: 0,
                             left: 0,
                             width: '100vw',
-                            height: '100dvh',
+                            height: '100vh',
+                            minHeight: '100dvh',
                             zIndex: -1,
-                            pointerEvents: 'none'
+                            pointerEvents: 'none',
+                            overflow: 'hidden'
                         }}
                     >
                         <div dangerouslySetInnerHTML={{ __html: `
@@ -99,11 +101,11 @@ const Portfolio = ({ onProjectSelect }) => {
                                 muted 
                                 loop 
                                 playsinline 
-                                style="position: absolute; top: 0; left: 0; width: 100vw; height: 100dvh; object-fit: cover; display: block;"
+                                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; width: auto; height: auto;"
                                 src="${hoveredProject.video}"
                             >
                             </video>
-                        `}} style={{ width: '100%', height: '100%' }} />
+                        `}} style={{ width: '100%', height: '100%', position: 'relative' }} />
                         {/* Subtle dark overlay for readability while browsing labels */}
                         <div style={{
                             position: 'absolute',

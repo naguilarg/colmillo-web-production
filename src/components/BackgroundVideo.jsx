@@ -7,7 +7,8 @@ const BackgroundVideo = ({ src }) => {
             top: 0,
             left: 0,
             width: '100vw',
-            height: '100dvh',
+            height: '100vh', /* Safe fallback height */
+            minHeight: '100dvh',
             zIndex: -2,
             overflow: 'hidden',
             pointerEvents: 'none',
@@ -19,11 +20,11 @@ const BackgroundVideo = ({ src }) => {
                     muted 
                     loop 
                     playsinline 
-                    style="position: absolute; top: 0; left: 0; width: 100vw; height: 100dvh; object-fit: cover; display: block; background: #000;"
+                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; width: auto; height: auto; background: #000;"
                     src="${src}"
                 >
                 </video>
-            `}} style={{ width: '100%', height: '100%' }} />
+            `}} style={{ width: '100%', height: '100%', position: 'relative' }} />
 
             {/* Dark overlay for readability */}
             <div style={{
