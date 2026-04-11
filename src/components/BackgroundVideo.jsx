@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
 const BackgroundVideo = ({ src }) => {
-    const [isMobile, setIsMobile] = useState(false);
+    // Initialize synchronously so first render is correct, preventing source swap bugs breaking Safari autoplay
+    const [isMobile, setIsMobile] = useState(
+        typeof window !== 'undefined' ? window.innerWidth <= 768 : false
+    );
 
     useEffect(() => {
         const checkMobile = () => {

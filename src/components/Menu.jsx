@@ -115,7 +115,7 @@ const Menu = ({ isOpen, setIsOpen, setView }) => {
                                     }}
                                     style={{
                                         display: 'block',
-                                        fontSize: 'clamp(5.5rem, 20vw, 15rem)',
+                                        fontSize: 'clamp(3rem, 12vw, 12rem)', // Adjusted mathematically to fit 8 characters within 100vw
                                         fontFamily: 'var(--font-serif)',
                                         textTransform: 'uppercase',
                                         lineHeight: '0.8',
