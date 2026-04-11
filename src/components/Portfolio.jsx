@@ -95,7 +95,6 @@ const Portfolio = ({ onProjectSelect }) => {
                         }}
                     >
                         <video
-                            ref={(el) => { if (el) el.play().catch(e => console.log(e)); }}
                             autoPlay
                             muted
                             defaultMuted
