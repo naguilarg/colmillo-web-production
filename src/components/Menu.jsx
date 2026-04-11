@@ -128,8 +128,10 @@ const Menu = ({ isOpen, setIsOpen, setView }) => {
                                         padding: 0
                                     }}
                                     onMouseEnter={(e) => {
-                                        e.target.style.transform = 'translateX(50px) skewX(-3deg)';
-                                        e.target.style.opacity = '0.3';
+                                        if (window.innerWidth > 768) {
+                                            e.target.style.transform = 'translateX(50px) skewX(-3deg)';
+                                            e.target.style.opacity = '0.3';
+                                        }
                                     }}
                                     onMouseLeave={(e) => {
                                         e.target.style.transform = 'translateX(0px) skewX(0deg)';
