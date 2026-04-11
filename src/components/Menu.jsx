@@ -77,16 +77,16 @@ const Menu = ({ isOpen, setIsOpen, setView }) => {
                                 .menu-logo-container {
                                     width: 60% !important;
                                     right: 10% !important;
-                                    bottom: 80px !important;
+                                    bottom: 150px !important;
                                     opacity: 0.5 !important;
                                 }
                                 .menu-footer-branding {
                                     left: 40px !important;
-                                    bottom: 120px !important;
+                                    bottom: 60px !important;
                                 }
                                 .menu-footer-links {
                                     left: 40px !important;
-                                    bottom: 80px !important;
+                                    bottom: 30px !important;
                                     flex-wrap: wrap;
                                     gap: 20px !important;
                                 }

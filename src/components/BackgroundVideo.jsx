@@ -14,6 +14,7 @@ const BackgroundVideo = ({ src }) => {
             background: '#000'
         }}>
             <video
+                ref={(el) => { if (el) el.play().catch(e => console.log(e)); }}
                 autoPlay
                 muted
                 defaultMuted
