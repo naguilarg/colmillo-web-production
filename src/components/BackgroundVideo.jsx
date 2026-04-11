@@ -57,4 +57,4 @@ const BackgroundVideo = ({ src }) => {
     );
 };
 
-export default BackgroundVideo;
+export default React.memo(BackgroundVideo);
