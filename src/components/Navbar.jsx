@@ -15,6 +15,11 @@ const Navbar = ({ setView }) => {
               width: 40px !important;
             }
           }
+          @media (max-width: 480px) {
+            .navbar-logo-container {
+              width: 32px !important;
+            }
+          }
         `}
       </style>
       <nav

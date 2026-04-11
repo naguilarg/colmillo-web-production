@@ -96,6 +96,7 @@ const Portfolio = ({ onProjectSelect }) => {
                         <video
                             autoPlay
                             muted
+                            defaultMuted
                             loop
                             playsInline
                             style={{

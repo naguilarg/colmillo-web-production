@@ -1,8 +1,8 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronLeft } from 'lucide-react';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
-const ProjectDetail = ({ project, onBack }) => {
+const ProjectDetail = ({ project, projects, onSelectProject, onBack }) => {
     const videoRef = useRef(null);
     const [isLoading, setIsLoading] = useState(false); // Default to false for immediate visibility
     const [showDescription, setShowDescription] = useState(false);
@@ -17,6 +17,13 @@ const ProjectDetail = ({ project, onBack }) => {
         setShowCredits(!showCredits);
         if (!showCredits) setShowDescription(false); // Close description if opening credits
     };
+
+    const currentIndex = projects ? projects.findIndex(p => p.id === project.id) : -1;
+    const hasNext = currentIndex !== -1 && currentIndex < projects.length - 1;
+    const hasPrev = currentIndex !== -1 && currentIndex > 0;
+
+    const handleNext = () => { if (hasNext) onSelectProject(projects[currentIndex + 1]); };
+    const handlePrev = () => { if (hasPrev) onSelectProject(projects[currentIndex - 1]); };
 
     useEffect(() => {
         if (videoRef.current) {
@@ -232,6 +239,32 @@ const ProjectDetail = ({ project, onBack }) => {
                 background: '#000',
                 zIndex: 1 // Baseline
             }}>
+                {hasPrev && (
+                    <button
+                        onClick={handlePrev}
+                        style={{
+                            position: 'absolute', left: '25px', top: '50%', transform: 'translateY(-50%)',
+                            background: 'transparent', border: 'none', color: '#fff', opacity: 0.5, cursor: 'pointer', zIndex: 100
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.opacity = 1}
+                        onMouseLeave={(e) => e.currentTarget.style.opacity = 0.5}
+                    >
+                        <ChevronLeft size={48} />
+                    </button>
+                )}
+                {hasNext && (
+                    <button
+                        onClick={handleNext}
+                        style={{
+                            position: 'absolute', right: '25px', top: '50%', transform: 'translateY(-50%)',
+                            background: 'transparent', border: 'none', color: '#fff', opacity: 0.5, cursor: 'pointer', zIndex: 100
+                        }}
+                        onMouseEnter={(e) => e.currentTarget.style.opacity = 1}
+                        onMouseLeave={(e) => e.currentTarget.style.opacity = 0.5}
+                    >
+                        <ChevronRight size={48} />
+                    </button>
+                )}
                 {isLoading && (
                     <div style={{ position: 'absolute', opacity: 0.6, fontSize: '0.6rem', letterSpacing: '3px', color: '#fff', zIndex: 10 }}>
                         LOADING...
@@ -241,6 +274,7 @@ const ProjectDetail = ({ project, onBack }) => {
                     ref={videoRef}
                     autoPlay
                     muted
+                    defaultMuted
                     loop
                     playsInline
                     onPlaying={() => setIsLoading(false)}
@@ -372,6 +406,29 @@ const ProjectDetail = ({ project, onBack }) => {
                     >
                         <ChevronLeft size={16} /> Volver
                     </button>
+
+                    {project.showFullVideoUrl && project.fullVideoUrl && (
+                        <a
+                            href={project.fullVideoUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            style={{
+                                color: '#fff',
+                                textDecoration: 'none',
+                                textTransform: 'uppercase',
+                                fontSize: '0.65rem',
+                                letterSpacing: '2px',
+                                border: '1px solid rgba(255,255,255,0.3)',
+                                padding: '8px 16px',
+                                borderRadius: '20px',
+                                transition: 'all 0.3s'
+                            }}
+                            onMouseEnter={(e) => { e.target.style.background = '#fff'; e.target.style.color = '#000'; }}
+                            onMouseLeave={(e) => { e.target.style.background = 'transparent'; e.target.style.color = '#fff'; }}
+                        >
+                            Ver vídeo completo
+                        </a>
+                    )}
 
                     <div className="project-footer-credits footer-branding" style={{ fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '3px', opacity: 0.5, color: '#fff' }}>
                         Colmillo &copy; 2024 &bull; Production Studio

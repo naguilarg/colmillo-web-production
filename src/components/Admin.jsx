@@ -221,6 +221,11 @@ const ProjectEditor = ({ project, onSave, onCancel, loading }) => {
                     <input placeholder="Year" value={formData.year || ''} onChange={e => handleChange('year', e.target.value)} style={{ ...inputStyle, width: '100px' }} />
                 </div>
                 <input placeholder="Video Path (e.g., /projects_vid/video.webm)" value={formData.video || ''} onChange={e => handleChange('video', e.target.value)} style={inputStyle} />
+                <input placeholder="Full Video URL (e.g., https://youtube.com/...)" value={formData.fullVideoUrl || ''} onChange={e => handleChange('fullVideoUrl', e.target.value)} style={inputStyle} />
+                <label style={{ display: 'flex', alignItems: 'center', gap: '10px', color: '#fff', fontSize: '0.9rem', padding: '5px 0' }}>
+                    <input type="checkbox" checked={formData.showFullVideoUrl || false} onChange={e => handleChange('showFullVideoUrl', e.target.checked)} />
+                    Mostrar Botón de "Vídeo Completo"
+                </label>
                 <textarea placeholder="Description" value={formData.description || ''} onChange={e => handleChange('description', e.target.value)} style={{ ...inputStyle, height: '100px' }} />
             </div>
 

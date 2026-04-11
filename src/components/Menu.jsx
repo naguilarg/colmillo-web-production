@@ -75,9 +75,10 @@ const Menu = ({ isOpen, setIsOpen, setView }) => {
                                     line-height: 1.1 !important;
                                 }
                                 .menu-logo-container {
-                                    width: 80% !important;
+                                    width: 60% !important;
                                     right: 10% !important;
-                                    bottom: 120px !important;
+                                    bottom: 80px !important;
+                                    opacity: 0.5 !important;
                                 }
                                 .menu-footer-branding {
                                     left: 40px !important;
@@ -191,9 +192,9 @@ const Menu = ({ isOpen, setIsOpen, setView }) => {
                         zIndex: 2,
                         color: '#000'
                     }}>
-                        <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Instagram</a>
-                        <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Youtube</a>
-                        <a href="#" style={{ color: 'inherit', textDecoration: 'none' }}>Linkedin</a>
+                        <a href="https://www.instagram.com/colmillo.es/" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>Instagram</a>
+                        <a href="https://www.youtube.com/@ColmilloYT" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>Youtube</a>
+                        <a href="https://es.linkedin.com/company/colmillo-es" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>Linkedin</a>
                     </div>
                 </motion.div>
             )}

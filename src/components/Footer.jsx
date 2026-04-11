@@ -11,13 +11,13 @@ const Footer = () => {
                 </div>
 
                 <div style={{ display: 'flex', gap: '30px' }}>
-                    <a href="#" style={{ opacity: 0.6, transition: '0.3s' }} onMouseEnter={e => e.target.style.opacity = 1} onMouseLeave={e => e.target.style.opacity = 0.6}>
+                    <a href="https://www.instagram.com/colmillo.es/" target="_blank" rel="noopener noreferrer" style={{ opacity: 0.6, transition: '0.3s' }} onMouseEnter={e => e.target.style.opacity = 1} onMouseLeave={e => e.target.style.opacity = 0.6}>
                         <Instagram size={20} />
                     </a>
-                    <a href="#" style={{ opacity: 0.6, transition: '0.3s' }} onMouseEnter={e => e.target.style.opacity = 1} onMouseLeave={e => e.target.style.opacity = 0.6}>
+                    <a href="https://www.youtube.com/@ColmilloYT" target="_blank" rel="noopener noreferrer" style={{ opacity: 0.6, transition: '0.3s' }} onMouseEnter={e => e.target.style.opacity = 1} onMouseLeave={e => e.target.style.opacity = 0.6}>
                         <Youtube size={20} />
                     </a>
-                    <a href="#" style={{ opacity: 0.6, transition: '0.3s' }} onMouseEnter={e => e.target.style.opacity = 1} onMouseLeave={e => e.target.style.opacity = 0.6}>
+                    <a href="https://es.linkedin.com/company/colmillo-es" target="_blank" rel="noopener noreferrer" style={{ opacity: 0.6, transition: '0.3s' }} onMouseEnter={e => e.target.style.opacity = 1} onMouseLeave={e => e.target.style.opacity = 0.6}>
                         <Linkedin size={20} />
                     </a>
                 </div>

@@ -112,9 +112,9 @@ const Contact = () => {
                     letterSpacing: '2px'
                 }}
             >
-                <a href="#" style={{ color: '#fff', textDecoration: 'none' }}>Instagram</a>
-                <a href="#" style={{ color: '#fff', textDecoration: 'none' }}>Youtube</a>
-                <a href="#" style={{ color: '#fff', textDecoration: 'none' }}>Linkedin</a>
+                <a href="https://www.instagram.com/colmillo.es/" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'none' }}>Instagram</a>
+                <a href="https://www.youtube.com/@ColmilloYT" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'none' }}>Youtube</a>
+                <a href="https://es.linkedin.com/company/colmillo-es" target="_blank" rel="noopener noreferrer" style={{ color: '#fff', textDecoration: 'none' }}>Linkedin</a>
             </motion.div>
         </motion.div>
     );

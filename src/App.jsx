@@ -9,6 +9,7 @@ import ProjectDetail from './components/ProjectDetail';
 import Contact from './components/Contact';
 import Meet from './components/Meet';
 import Admin from './components/Admin';
+import projectsData from './data/projects.json';
 import './index.css';
 
 function App() {
@@ -127,7 +128,7 @@ function App() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
               style={{ position: 'fixed', top: 0, left: 0, width: '100%', height: '100%', zIndex: 9999 }}
             >
-              <ProjectDetail project={selectedProject} onBack={handleBackToPortfolio} />
+              <ProjectDetail project={selectedProject} projects={projectsData} onSelectProject={handleProjectSelect} onBack={handleBackToPortfolio} />
             </motion.div>
           )}
 

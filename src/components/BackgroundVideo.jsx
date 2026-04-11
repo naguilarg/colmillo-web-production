@@ -16,6 +16,7 @@ const BackgroundVideo = ({ src }) => {
             <video
                 autoPlay
                 muted
+                defaultMuted
                 loop
                 playsInline
                 key={src}
