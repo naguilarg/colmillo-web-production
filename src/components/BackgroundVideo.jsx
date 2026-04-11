@@ -1,6 +1,20 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 const BackgroundVideo = ({ src }) => {
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+        checkMobile(); // Check immediately on mount
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
+
+    // Swap precisely the home app background video when on mobile
+    const currentVideoSrc = (isMobile && src === '/background.mp4') ? '/background-mobile.mp4' : src;
+
     return (
         <div style={{
             position: 'fixed',
@@ -20,6 +34,7 @@ const BackgroundVideo = ({ src }) => {
                 defaultMuted
                 loop
                 playsInline
+                key={currentVideoSrc}
                 style={{
                     width: '100%',
                     height: '100%',
@@ -27,7 +42,7 @@ const BackgroundVideo = ({ src }) => {
                     display: 'block'
                 }}
             >
-                <source src={src} type={src.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
+                <source src={currentVideoSrc} type={currentVideoSrc.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
             </video>
 
             {/* Dark overlay for readability */}
