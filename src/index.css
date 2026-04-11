@@ -96,3 +96,15 @@ button {
 ::-webkit-scrollbar-thumb:hover {
   background: #444;
 }
+
+/* Disable iOS Safari video controls natively */
+video::-webkit-media-controls {
+    display: none !important;
+}
+video::-webkit-media-controls-start-playback-button {
+    display: none !important;
+    -webkit-appearance: none;
+}
+video {
+    pointer-events: none;
+}

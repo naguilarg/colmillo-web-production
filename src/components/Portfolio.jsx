@@ -88,24 +88,27 @@ const Portfolio = ({ onProjectSelect }) => {
                             top: 0,
                             left: 0,
                             width: '100vw',
-                            height: '100vh',
-                            minHeight: '100dvh',
+                            height: '100dvh',
                             zIndex: -1,
                             pointerEvents: 'none',
                             overflow: 'hidden'
                         }}
                     >
-                        <div dangerouslySetInnerHTML={{ __html: `
-                            <video 
-                                autoplay 
-                                muted 
-                                loop 
-                                playsinline 
-                                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100vw; min-height: 100dvh; width: auto; height: auto; object-fit: cover;"
-                                src="${hoveredProject.video}"
-                            >
-                            </video>
-                        `}} style={{ position: 'absolute', top: 0, left: 0, width: '100vw', height: '100dvh', overflow: 'hidden' }} />
+                        <video
+                            ref={(el) => { if (el) el.play().catch(e => console.log(e)); }}
+                            autoPlay
+                            muted
+                            defaultMuted
+                            loop
+                            playsInline
+                            style={{
+                                width: '100%',
+                                height: '100%',
+                                objectFit: 'cover',
+                                display: 'block'
+                            }}
+                            src={hoveredProject.video}
+                        />
                         {/* Subtle dark overlay for readability while browsing labels */}
                         <div style={{
                             position: 'absolute',

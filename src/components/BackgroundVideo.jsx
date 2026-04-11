@@ -7,24 +7,28 @@ const BackgroundVideo = ({ src }) => {
             top: 0,
             left: 0,
             width: '100vw',
-            height: '100vh', /* Safe fallback height */
-            minHeight: '100dvh',
+            height: '100dvh',
             zIndex: -2,
             overflow: 'hidden',
             pointerEvents: 'none',
             background: '#000'
         }}>
-            <div dangerouslySetInnerHTML={{ __html: `
-                <video 
-                    autoplay 
-                    muted 
-                    loop 
-                    playsinline 
-                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100vw; min-height: 100dvh; width: auto; height: auto; object-fit: cover; background: #000;"
-                    src="${src}"
-                >
-                </video>
-            `}} style={{ position: 'absolute', top: 0, left: 0, width: '100vw', height: '100dvh', overflow: 'hidden' }} />
+            <video
+                ref={(el) => { if (el) el.play().catch(e => console.log(e)); }}
+                autoPlay
+                muted
+                defaultMuted
+                loop
+                playsInline
+                style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block'
+                }}
+            >
+                <source src={src} type={src.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
+            </video>
 
             {/* Dark overlay for readability */}
             <div style={{
