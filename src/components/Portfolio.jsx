@@ -101,11 +101,11 @@ const Portfolio = ({ onProjectSelect }) => {
                                 muted 
                                 loop 
                                 playsinline 
-                                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100%; min-height: 100%; width: auto; height: auto;"
+                                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100vw; min-height: 100dvh; width: auto; height: auto; object-fit: cover;"
                                 src="${hoveredProject.video}"
                             >
                             </video>
-                        `}} style={{ width: '100%', height: '100%', position: 'relative' }} />
+                        `}} style={{ position: 'absolute', top: 0, left: 0, width: '100vw', height: '100dvh', overflow: 'hidden' }} />
                         {/* Subtle dark overlay for readability while browsing labels */}
                         <div style={{
                             position: 'absolute',
