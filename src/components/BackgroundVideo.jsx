@@ -7,7 +7,7 @@ const BackgroundVideo = ({ src }) => {
             top: 0,
             left: 0,
             width: '100vw',
-            height: '100vh',
+            height: '100dvh',
             zIndex: -2,
             overflow: 'hidden',
             pointerEvents: 'none',
@@ -19,7 +19,7 @@ const BackgroundVideo = ({ src }) => {
                     muted 
                     loop 
                     playsinline 
-                    style="width: 100%; height: 100%; object-fit: cover; display: block; background: #000;"
+                    style="position: absolute; top: 0; left: 0; width: 100vw; height: 100dvh; object-fit: cover; display: block; background: #000;"
                     src="${src}"
                 >
                 </video>
