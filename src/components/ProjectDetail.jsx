@@ -118,7 +118,9 @@ const ProjectDetail = ({ project, projects, onSelectProject, onBack }) => {
                             justify-content: center !important;
                         }
                         .footer-branding {
-                            display: none !important; /* Hide on mobile as requested */
+                            display: block !important; /* Made visible again as requested */
+                            text-align: center;
+                            margin-top: 15px;
                         }
                         .project-header {
                             padding: 40px 20px 10px !important;
@@ -431,7 +433,7 @@ const ProjectDetail = ({ project, projects, onSelectProject, onBack }) => {
                     )}
 
                     <div className="project-footer-credits footer-branding" style={{ fontSize: '0.6rem', textTransform: 'uppercase', letterSpacing: '3px', opacity: 0.5, color: '#fff' }}>
-                        Colmillo &copy; 2024 &bull; Production Studio
+                        Colmillo &copy; 2026 &bull; Production Studio
                     </div>
                 </div>
             </motion.div>

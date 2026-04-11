@@ -137,22 +137,10 @@ const Hero = ({ onCtaClick }) => {
                 zIndex: 2
             }}>
                 <div className="hero-copy" style={{ textAlign: 'left' }}>
-                    &copy; 2024 Colmillo Production Studio
+                    &copy; 2026 Colmillo Production Studio
                 </div>
 
-                {/* Centered Language Switcher */}
-                <div className="hero-lang-switcher" style={{
-                    position: 'absolute',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    display: 'flex',
-                    gap: '20px',
-                    cursor: 'pointer'
-                }}>
-                    <span>Español</span>
-                    <span style={{ opacity: 0.3 }}>/</span>
-                    <span>English</span>
-                </div>
+                {/* Removed Language Switcher as requested */}
 
                 <div className="hero-rights" style={{ textAlign: 'right' }}>
                     All Rights Reserved

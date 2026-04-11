@@ -13,7 +13,7 @@ const BackgroundVideo = ({ src }) => {
     }, []);
 
     // Swap precisely the home app background video when on mobile
-    const currentVideoSrc = (isMobile && src === '/background.mp4') ? '/background-mobile.mp4' : src;
+    const currentVideoSrc = (isMobile && src === '/background.webm') ? '/background-mobile.mp4' : src;
 
     return (
         <div style={{

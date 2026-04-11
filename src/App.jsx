@@ -57,7 +57,7 @@ function App() {
       position: 'relative',
       overflow: currentView === 'manifesto' ? 'visible' : 'hidden' // Key fix for scroll propagation
     }}>
-      <BackgroundVideo src="/background.mp4" />
+      <BackgroundVideo src="/background.webm" />
 
       {currentView !== 'meet' && <Navbar setView={setCurrentView} />}
 

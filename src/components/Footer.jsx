@@ -7,7 +7,7 @@ const Footer = () => {
             <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '40px' }}>
                 <div style={{ flex: 1 }}>
                     <h2 style={{ fontSize: '2rem', marginBottom: '20px' }}>COLMILLO</h2>
-                    <p style={{ opacity: 0.5, fontSize: '0.9rem' }}>&copy; {new Date().getFullYear()} Colmillo Production Studio. Todos los derechos reservados.</p>
+                    <p style={{ opacity: 0.5, fontSize: '0.9rem' }}>&copy; 2026 Colmillo Production Studio. Todos los derechos reservados.</p>
                 </div>
 
                 <div style={{ display: 'flex', gap: '30px' }}>
