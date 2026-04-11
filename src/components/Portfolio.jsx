@@ -93,20 +93,17 @@ const Portfolio = ({ onProjectSelect }) => {
                             pointerEvents: 'none'
                         }}
                     >
-                        <video
-                            ref={(el) => { if (el) el.play().catch(e => console.log(e)); }}
-                            autoPlay
-                            muted
-                            defaultMuted
-                            loop
-                            playsInline
-                            style={{
-                                width: '100%',
-                                height: '100%',
-                                objectFit: 'cover'
-                            }}
-                            src={hoveredProject.video}
-                        />
+                        <div dangerouslySetInnerHTML={{ __html: `
+                            <video 
+                                autoplay 
+                                muted 
+                                loop 
+                                playsinline 
+                                style="width: 100%; height: 100%; object-fit: cover; display: block;"
+                                src="${hoveredProject.video}"
+                            >
+                            </video>
+                        `}} style={{ width: '100%', height: '100%' }} />
                         {/* Subtle dark overlay for readability while browsing labels */}
                         <div style={{
                             position: 'absolute',

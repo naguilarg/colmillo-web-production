@@ -13,24 +13,17 @@ const BackgroundVideo = ({ src }) => {
             pointerEvents: 'none',
             background: '#000'
         }}>
-            <video
-                ref={(el) => { if (el) el.play().catch(e => console.log(e)); }}
-                autoPlay
-                muted
-                defaultMuted
-                loop
-                playsInline
-                key={src}
-                style={{
-                    width: '100%',
-                    height: '100%',
-                    objectFit: 'cover',
-                    display: 'block'
-                }}
-            >
-                <source src={src} type={src.endsWith('.webm') ? 'video/webm' : 'video/mp4'} />
-                Your browser does not support the video tag.
-            </video>
+            <div dangerouslySetInnerHTML={{ __html: `
+                <video 
+                    autoplay 
+                    muted 
+                    loop 
+                    playsinline 
+                    style="width: 100%; height: 100%; object-fit: cover; display: block; background: #000;"
+                    src="${src}"
+                >
+                </video>
+            `}} style={{ width: '100%', height: '100%' }} />
 
             {/* Dark overlay for readability */}
             <div style={{

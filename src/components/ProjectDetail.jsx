@@ -34,7 +34,7 @@ const ProjectDetail = ({ project, projects, onSelectProject, onBack }) => {
     return (
         <div style={{
             width: '100%',
-            height: '100vh',
+            height: '100dvh',
             backgroundColor: '#000',
             position: 'relative',
             overflow: 'hidden',
@@ -73,7 +73,7 @@ const ProjectDetail = ({ project, projects, onSelectProject, onBack }) => {
                             padding: 20px 30px;
                             background: transparent; /* Clean transparent background */
                             position: absolute;
-                            bottom: 80px;
+                            bottom: 120px;
                             left: 0;
                             width: 100%;
                             z-index: 50;
@@ -121,9 +121,9 @@ const ProjectDetail = ({ project, projects, onSelectProject, onBack }) => {
                             display: none !important; /* Hide on mobile as requested */
                         }
                         .project-header {
-                            padding: 30px 20px !important;
+                            padding: 40px 20px 10px !important;
                             gap: 15px !important;
-                            top: 10px !important;
+                            top: 0 !important;
                         }
                         .back-btn {
                             position: relative !important;
