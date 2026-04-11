@@ -94,21 +94,18 @@ const Portfolio = ({ onProjectSelect }) => {
                             overflow: 'hidden'
                         }}
                     >
-                        <video
-                            autoPlay
-                            muted
-                            defaultMuted
-                            loop
-                            playsInline
-                            poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                            style={{
-                                width: '100%',
-                                height: '100%',
-                                objectFit: 'cover',
-                                display: 'block'
-                            }}
-                            src={hoveredProject.video}
-                        />
+                        <div dangerouslySetInnerHTML={{ __html: `
+                            <video 
+                                autoplay 
+                                muted 
+                                loop 
+                                playsinline 
+                                poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                                style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100vw; min-height: 100dvh; width: auto; height: auto; object-fit: cover;"
+                                src="${hoveredProject.video}"
+                            >
+                            </video>
+                        `}} style={{ position: 'absolute', top: 0, left: 0, width: '100vw', height: '100dvh', overflow: 'hidden' }} />
                         {/* Subtle dark overlay for readability while browsing labels */}
                         <div style={{
                             position: 'absolute',
