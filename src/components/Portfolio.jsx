@@ -101,6 +101,7 @@ const Portfolio = ({ onProjectSelect }) => {
                             defaultMuted
                             loop
                             playsInline
+                            poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                             style={{
                                 width: '100%',
                                 height: '100%',
