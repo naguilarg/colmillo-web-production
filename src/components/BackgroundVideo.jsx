@@ -37,11 +37,11 @@ const BackgroundVideo = ({ src }) => {
                     loop 
                     playsinline 
                     poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                    style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); min-width: 100vw; min-height: 100dvh; width: auto; height: auto; object-fit: cover;"
+                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
                 >
                     <source src="${currentVideoSrc}" type="${currentVideoSrc.endsWith('.webm') ? 'video/webm' : 'video/mp4'}" />
                 </video>
-            `}} style={{ position: 'absolute', top: 0, left: 0, width: '100vw', height: '100dvh', overflow: 'hidden' }} />
+            `}} style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', overflow: 'hidden' }} />
 
             {/* Dark overlay for readability */}
             <div style={{
